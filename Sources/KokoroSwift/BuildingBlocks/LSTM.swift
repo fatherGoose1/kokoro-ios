@@ -66,11 +66,7 @@ class LSTM: Module {
     // Pre-compute input projections
     let xProj: MLXArray
     if let biasIhForward = biasIhForward, let biasHhForward = biasHhForward {
-      xProj = MLX.addMM(
-        biasIhForward + biasHhForward,
-        x,
-        wxForward.transposed()
-      )
+      xProj = MLX.matmul(x, wxForward.transposed()) + biasIhForward + biasHhForward
     } else {
       xProj = MLX.matmul(x, wxForward.transposed())
     }
@@ -114,11 +110,7 @@ class LSTM: Module {
   ) -> (MLXArray, MLXArray) {
     let xProj: MLXArray
     if let biasIhBackward = biasIhBackward, let biasHhBackward = biasHhBackward {
-      xProj = MLX.addMM(
-        biasIhBackward + biasHhBackward,
-        x,
-        wxBackward.transposed()
-      )
+      xProj = MLX.matmul(x, wxBackward.transposed()) + biasIhBackward + biasHhBackward
     } else {
       xProj = MLX.matmul(x, wxBackward.transposed())
     }
