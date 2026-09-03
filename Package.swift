@@ -18,7 +18,7 @@ let package = Package(
   dependencies: [
     .package(url: "https://github.com/fatherGoose1/mlx-swift", revision: "0d867a52f67fa454d27b9042c23b6219bb7727b3"),
     // .package(url: "https://github.com/mlalma/eSpeakNGSwift", from: "1.0.1"),
-    .package(url: "https://github.com/fatherGoose1/MisakiSwift", revision: "943f801c8650e5a1a4604033b223de3fa70ec449"),
+    .package(url: "https://github.com/fatherGoose1/MisakiSwift", revision: "59932673529cae7fbd94aca25d3b2ee1a2954442"),
     .package(url: "https://github.com/fatherGoose1/MLXUtilsLibrary.git", revision: "aeec4b857174b2e01a273e551d914f1971adc261")
   ],
   targets: [
