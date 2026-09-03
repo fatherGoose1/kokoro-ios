@@ -294,7 +294,7 @@ public final class KokoroTTS {
   ///   - acousticStyle: Style embedding for acoustic features (indices 0-127)
   private func extractStyleEmbeddings(from voice: MLXArray, tokenCount: Int) -> (MLXArray, MLXArray) {
     // Extract reference style from voice embedding
-    let referenceStyle = voice[tokenCount - 1, 0 ... 1, 0...]
+    let referenceStyle = voice.asType(.float16)[tokenCount - 1, 0 ... 1, 0...]
     
     // Split into global style (for prosody/duration) and acoustic style
     let globalStyle = referenceStyle[0 ... 1, 128...]

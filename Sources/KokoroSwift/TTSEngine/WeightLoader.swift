@@ -99,7 +99,7 @@ final class WeightLoader {
       }
     }
 
-    return sanitizedWeights
+    return sanitizedWeights.mapValues { $0.asType(.float16) }
   }
 
   /// Checks if a 3D weight array has the correct shape and doesn't need transposition.
